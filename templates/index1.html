@@ -1,0 +1,36 @@
+{% extends "layout01.html" %}
+{% block temp %}
+
+<div class="content-section">
+    <div class="row">
+        <div class="mx-auto" style="width: 275pt;">
+        
+            <div class="form-group">
+                    <form method="POST" action="{{ url_for('predict')}}">
+                        <input type="text" name="month" class="form-control" placeholder="month [mar-dec] e.g mar=0,dec=9" required="required" /><br><br>
+                        <input type="text" name="emp" class="form-control" placeholder = "employee variation rate[-4,4] e.g -3.4"required="required" /><br><br>
+                        <input type="text" name="cons" class="form-control" placeholder="consumer monthly price index [90-100] e.g 94.678" required="required" /><br><br>
+                    
+                        <input type="text" name="contact" class="form-control" placeholder="contact wired or cellular follow by [0,1]" required="required" /><br><br>
+                        <input type="text" name="housing" class="form-control" placeholder="Customer Has Housing loan? yes,no,unknown [0,1,2]" required="required" /><br><br>
+                        <input type="text" name="euribor3m"class="form-control" placeholder="Euribor 3-month Rate [0-5] e.g. 3.123" required="required" /><br><br>
+
+                        <input type="text" name="default" class="form-control" placeholder ="Customer Has Default? np,yes,unknown [0,1,2]" required="required" /><br><br>
+                        
+                    
+                    
+                        <button type="submit" class="btn btn-primary btn-block btn-block">Predict</button>
+                    
+            
+                        
+                    </form>
+            </div>
+        </div>
+    </div> 
+    
+</div>
+
+    <br>
+   <br>
+   
+{% endblock temp %}
